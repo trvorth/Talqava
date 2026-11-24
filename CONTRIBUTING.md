@@ -45,6 +45,8 @@ npm run check
 
 This type-checks the code and runs every test. It must pass. The tests use stand-ins for AI models and for GitHub, so they need no key and cost nothing.
 
+Every pull request and every push to `main` also runs `npm ci` and `npm run check` automatically in GitHub Actions (see [`.github/workflows/check.yml`](.github/workflows/check.yml)). A pull request shows the check at the bottom of its page; it must be green before merge.
+
 - **Add or change a test** for what you changed. Tests live in `test/core` and `test/local`, and describe behaviour in a sentence (`test("a group stops at its monthly budget …")`).
 - **Keep pull requests small**: one change, explained. Say what it does for the person using the app, and how you checked it.
 - **Never commit secrets** (API keys, tokens, passwords) or anything from your `data/` folder. The repository is public.
